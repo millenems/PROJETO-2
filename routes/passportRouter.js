@@ -73,7 +73,7 @@ res.render("passport/login",{"message": req.flash("error")});
 });
 
 passportRouter.post("/login", passport.authenticate("local", {
-  successRedirect: "/admin",
+  successRedirect: "/chatAdmin",
   failureRedirect: "/login",
   //failureFlash: true,
   passReqToCallback: true
@@ -90,7 +90,7 @@ passportRouter.get("/private-chat", ensureLogin.ensureLoggedIn(), (req, res) => 
   
 });
 
-passportRouter.get("/admin", ensureLogin.ensureLoggedIn(), checkAdmin, (req, res) => {
+passportRouter.get("/chatAdmin", ensureLogin.ensureLoggedIn(), checkAdmin, (req, res) => {
   Message.find()
   
   .then(retorno => {
@@ -115,7 +115,7 @@ passportRouter.get("/private-chat", ensureLogin.ensureLoggedIn(), (req, res) => 
   
 });
 
-passportRouter.get("/findDb", (req, res) => {
+passportRouter.get("/admin", (req, res) => {
   const { username } = req.body;
   User.find({username})
   .then(users => {
