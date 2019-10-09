@@ -1,0 +1,27 @@
+{{#if user}}
+
+  <h1 name="username">Bem vindo administrador <span>{{ user.username}}</span>
+       
+       
+       <form action = '/findDb' method="get"> 
+      Busque por nome de usuario: <input id="whichUser"type="text" name="findUsers"> 
+      <button id="deleteUser" type="submit">Excluir Usuario</button>
+
+      </form>
+      <div class="users"> </div>
+      <form id ="chat">
+    <div class="messages">
+      {{#each retorno}}
+      <div class="message"><strong> {{this.author}}</strong>:{{this.message}} </div>
+    
+      {{/each}}
+
+    </div>
+     <input type="hidden"  name="username" value={{user.username}}>
+     <input type="text" name="message" placeholder="Digite sua mensagem">
+    <button type="submit">Enviar</button>
+
+  </form>
+
+<a href="/logout">log out</a>
+{{/if}}
