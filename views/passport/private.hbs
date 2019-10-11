@@ -1,19 +1,18 @@
-
 {{#if user}}
 
   <h1 name="username">Bem vindo(a) <span>{{ user.username}}</span>
       <form id ="chat">
    
-    <div class="messages">
+    <div class="messages chatBox">
       {{#each retorno}}
       <div class="message"><strong> {{this.author}}</strong>:{{this.message}} </div>
     
       {{/each}}
 
     </div>
-     <input type="hidden"  name="username" value={{user.username}}>
-     <input type="text" name="message" placeholder="Digite sua mensagem">
-    <button type="submit">Enviar</button>
+     <input class="inputChat" type="hidden"  name="username" value={{user.username}}>
+     <input class="inputChat" type="text" name="message" placeholder="Digite sua mensagem">
+    <button class="buttonChat" type="submit">Enviar</button>
 
   </form>
 

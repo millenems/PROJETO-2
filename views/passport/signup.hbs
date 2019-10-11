@@ -1,44 +1,87 @@
-<div class="container">
+<div class="body1">
+        <div class="main-menu h-100">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                  <a class="navbar-brand text-white" href="/">Pra você e Por você</a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#studioMenu" aria-controls="studioMenu" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i><span class="text-white"></span>MENU</button>
+                  
+                  <div class="navbar-collapse collapse show" id="studioMenu">
+                    <ul class="navbar-nav ml-auto mr-auto mt-2 mt-lg-0">
+                      <li class="nav-item active">
+                        <a class="nav-link text-white" href="/">Home<span class="sr-only">(current)</span></a></a>
+                      </li>
+                      <li class="nav-item active">
+                        <a class="nav-link text-white" href="/login">Login</a>
+                      </li>
+                      <li class="nav-item active">
+                        <a class="nav-link text-white" href="/signup">Signup</a>
+                      </li>
+                    </ul>
+                    <!-- Search Form -->
+                    <div class="header-search-form ml-auto">
+                          <form action="#">
+                              <input type="search" class="form-control" placeholder="Input your keyword then press enter..." id="search" name="search">
+                              <input class="d-none" type="submit" value="submit">
+                          </form>
+                      </div>
+                </nav>
+                <div class="container d-flex align-items-center">
+                        <div class="row allForm2 d-flex justify-content-center">
+                          <div class="col-10 pt-2">
+                            <h1>Sign Up</h1>
+                          </div>
+                          <div class="col-10 barra">
+                            <form action="/signup" method="post">
+                              <div class="form-group">
+                                <label for="username-input">Nome do usuário</label>
+                                <input name="username" type="username" class="form-control" id="username-input">
+                              </div>
+                              <div class="form-group">
+                                <label for="name-input">Nome completo</label>
+                                <input name="name" type="password" class="form-control" id="name-input">
+                              </div>
+                              <div class="form-group">
+                                <label for="password-input">Assunto</label>
+                                <input name="disease" list="diseases" class="form-control" id="disease-input">
+                                <datalist id="diseases">
+                                <option value="AIDS">
+                                <option value="ANSIEDADE">
+                                <option value="AVC">
+                                <option value="DEPRESSÃO">
+                                <option value="DIABETES">
+                                <option value="CANCER">
+                                <option value="OBESIDADE">
+                                <option value="TOC">
+                                </datalist>
+                              </div>
+                              <div class="form-group">
+                                <label for="password-input">Senha</label>
+                                <input name="password" type="password" class="form-control" id="password-input">
+                              </div>
 
-  <div class="row">
+                               {{#if message}}
+                              <div class="error-message">{{ message }}</div>
+                                {{/if}}
 
-    <div class="col-md-6">
-      <h1>Registro</h1>
+                              <button type="submit" class="btn btn-dark">Sign Up</button>
+                              
+                              <p class="">
+                                Já possui cadastro? Vá direto ao
+                              <a class=" text-white" href="/login">Login!</a>
+                              </p>
+                      
+                            </form>
+                          </div>
+                      
+                        </div>
+                      </div>
+                      
+                </div>
     </div>
-
-    <div class="col-md-6">
-
-      <form action="/signup" method="post">
-        <div class="form-group">
-          <label for="username-input">nome de usuario</label>
-          <input name="username" type="username" class="form-control" id="username-input">
-        </div>
-
-        <div class="form-group">
-          <label for="name-input">nome completo</label>
-          <input name="name" type="password" class="form-control" id="name-input">
-        </div>
-        <div class="form-group">
-          <label for="password-input">assunto</label>
-          <input name="disease" type="password" class="form-control" id="disease-input">
-        </div>
-        <div class="form-group">
-          <label for="password-input">senha</label>
-          <input name="password" type="password" class="form-control" id="password-input">
-        </div>
-
-        {{#if message}}
-       <div class="error-message">{{ message }}</div>
-         {{/if}}
-
-        
-
-        <button type="submit" class="btn btn-dark">Sign up</button>
-
-      </form>
-    </div>
-
-  </div>
-</div>
-
-<a href="/">back</a>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+     {{!-- <input name="role" list="role" class="form-control" id="disease-input">
+     <datalist id="role">
+   <option value="GUEST">
+   <option value="ADMIN">
+  </datalist> --}}

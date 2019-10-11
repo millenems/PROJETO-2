@@ -7,10 +7,11 @@
   <title>Pra você e por você</title>
  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script>
-  
-  <link rel="stylesheet" href="/stylesheets/style.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script>  
+  <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/style1.css" />
 </head>
 <body>
 
@@ -18,11 +19,17 @@
 
   <script src="/javascripts/script.js"></script>
   <script type="text/javascript">
+
+function updateScroll(){
+let element = document.querySelector(".messages");
+element.scrollTop = element.scrollHeight;
+}
+
 let socket = io();
 
 function renderMessage(message){
 $(".messages").append(`<div class="message"><strong>`+ message.author+`</strong>:`+ message.message + "</div>");
-console.log("rendered")
+updateScroll()
 }
 
 socket.on("previousMessages",function(messages){
